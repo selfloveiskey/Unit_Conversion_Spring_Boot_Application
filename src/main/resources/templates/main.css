@@ -1,0 +1,118 @@
+/* **********
+ * Home page
+ ************/
+body {
+    box-sizing: border-box;
+    display: block;
+    font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    min-height: 100%;
+    background-color: green;
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Div that holds form */
+.w3-center {
+    display: block;
+    padding: 4%;
+    border: solid;
+    margin: 4%;
+    text-align: center!important;
+    background-color: gray;
+}
+
+/* Inside div
+   Page header (h1)
+  */
+form{
+    padding: 2%;
+    margin: 2%;
+}
+
+/* Inside div
+   Page header (h1)
+  */
+h1 {
+    color: #555555;
+    padding: 2%;
+    border: double;
+    margin: 2%;
+    font-size: 42px;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-weight: bold;
+    display: block;
+}
+
+/* Inside div
+   Paragraph
+  */
+p {
+    font-size: 20px!important;
+    padding: 2%;
+    margin: 2%;
+    display: block;
+}
+/* *****************
+ * Temperature page
+ *******************/
+body {
+    font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    min-height: 100%;
+    background-color: green;
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/*
+  Main div
+ */
+#mainDiv {
+    padding: 4%;
+    border: solid;
+    margin: 4%;
+    text-align: center!important;
+    background-color: gray;
+}
+
+/* Inside main div
+   Page header (h1)
+ */
+h1 {
+    color: #555555;
+    padding: 2%;
+    border: double;
+    margin: 2%;
+    font-size: 42px;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-weight: bold;
+    display: block;
+
+}
+
+/*
+   Form
+ */
+form {
+
+}
+
+/*
+   paragraph
+  */
+#rowOneDiv {
+
+}
+
+/* ************
+ * Volume page
+ **************/
