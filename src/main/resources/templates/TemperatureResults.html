@@ -11,25 +11,25 @@
     <link th:href = "@{/css/bootstrap.css}" rel="stylesheet">
     <link th:href = "@{/css/main.css}" rel="stylesheet">
 
-    <title>Temperature</title>
+    <title>Temperature Conversion Results</title>
 </head>
 <body>
 <div id="mainDiv" class="container-md">
-    <h1>Temperature Conversion</h1>
+    <h1>Temperature Conversion Results</h1>
     <hr />
-    <form method="POST" th:action="@{/temperatureConversion}" th:object="${TemperatureRequestModel}" onsubmit="return validateForm()" enctype="multipart/form-data" name="tempt_conversion_form" class="w-100 p-3">
+    <form method="POST" th:action="@{/temperatureConversion}" th:object="${TemperatureResponseModel}" enctype="multipart/form-data" class="w-100 p-3">
         <!--Row One-->
         <div id="rowOneDiv" class="row row-cols-sm-3">
             <div id="rowOne_colOneDiv" class="col-5">
                 <div class="input-group">
-                    <select id="convertFrom" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" th:field="*{temptFrom}" required>
+                    <select id="convertFrom" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" th:field="*{temptFrom}" disabled>
                         <option class="dropdown-item" value="none" hidden selected>Select an Option</option>
                         <option class="dropdown-item" value="Celsius">Celsius</option>
                         <option class="dropdown-item" value="Fahrenheit">Fahrenheit</option>
                         <option class="dropdown-item" value="Kelvin">Kelvin</option>
                         <option class="dropdown-item" value="Rankine">Rankine</option>
                     </select>
-                    <input type="number" id="convertFromInput" class="form-control" th:field="*{temptValue}" step="0.0001" aria-label="Text input with dropdown button" required>
+                    <input type="text" class="form-control" th:field="*{initialDegree}" aria-label="Text input with dropdown button" disabled>
                 </div>
             </div>
 
@@ -39,13 +39,14 @@
 
             <div id="rowOne_colThreeDiv" class="col-5">
                 <div class="input-group">
-                    <select id="convertTo"  class="btn btn-primary dropdown-toggle" data-toggle="dropdown" th:field="*{temptTo}" required>
+                    <select id="convertTo"  class="btn btn-primary dropdown-toggle" data-toggle="dropdown" th:field="*{temptTo}" disabled>
                         <option class="dropdown-item" value="none" hidden selected>Select an Option</option>
                         <option class="dropdown-item" value="Celsius">Celsius</option>
                         <option class="dropdown-item" value="Fahrenheit">Fahrenheit</option>
                         <option class="dropdown-item" value="Kelvin">Kelvin</option>
                         <option class="dropdown-item" value="Rankine">Rankine</option>
                     </select>
+                    <input type="text" class="form-control" th:field="*{convertedDegree}" aria-label="Text input with dropdown button" disabled>
                 </div>
             </div>
         </div>
@@ -57,7 +58,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Student Response</span>
                     </div>
-                    <input type="number" id="studentResponseInput" class="form-control" th:field="*{studentResponse}" step="0.0001" aria-label="student response" required>
+                    <input type="number" id="studentResponseInput" class="form-control" th:field="*{studentResponse}" step="0.0001" aria-label="student response" disabled>
                 </div>
             </div>
 
@@ -66,21 +67,35 @@
             </div>
 
             <div id="rowTwo_colThreeDiv" class="submitButtonDiv row">
-                    <button id="submitButton" class="btn btn-primary" type="submit" aria-expanded="submit button">Check Answer</button>
+                <button id="submitButton" class="btn btn-primary" type="submit" aria-expanded="submit button" disabled>Check Answer</button>
             </div>
         </div>
 
         <!--Row Three-->
-        <div id="rowFourDiv" class=" row-cols-1 mt-4">
+        <div id="rowThreeDiv" class="mx-auto mt-5">
+            <div id="rowThree_colOneDiv" class="col">
+                <div id="textarea_div" class="form-group">
+                    <label for="results_output">Results Output</label>
+                    <textarea id="results_output" class="form-control" th:field="*{responseValidator}" aria-label="With textarea" disabled></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!--Row Four-->
+    <form method="POST" th:action="@{/}" class="w-90 p-3">
+        <!--Row Four-->
+        <div id="rowFourDiv" class="row row-cols-1 mt-4">
             <div id="rowFour_colOneDiv" class="col">
-                <input type="button" value="Home" class="btn btn-primary" aria-expanded="back button" onclick="location.href='/'">
-                <input id="resetButton" class="btn btn-primary" type="reset" value="Reset" aria-expanded="reset button" onclick="this.customReset();">
+                <div class="button_group_two">
+                    <button id="backButton" class="btn btn-primary" type="submit" aria-expanded="home page">Home</button>
+                </div>
             </div>
         </div>
     </form>
 </div>
 <!-- Bootstrap Bundle with Popper -->
-<script src="/js/main.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>-->
 <script src="/js/bootstrap.bundle.js"></script>
 </body>
 </html>
