@@ -15,33 +15,7 @@ public class TemperatureConversionModel {
     double R;
     int roundScale = 1;
 
-    public double toKelvin(String convertFrom, double degree){
-
-        Precision.round(degree,roundScale);
-
-        try {
-            if(convertFrom.equals(Units.CELSIUS.toString())) {
-                C = degree;
-                K = C + 273.15;
-            }
-            else if(convertFrom.equals(Units.FAHRENHEIT.toString())){
-                F = degree;
-                K = (F - 32) * 5/9 + 273.15;
-            }
-            if(convertFrom.equals(Units.RANKINE.toString())){
-                R = degree;
-                K = R * 5/9;
-            }
-        }
-        catch (IllegalStateException e) {
-            e.printStackTrace();
-        }
-        return Precision.round(K,roundScale);
-    }
-
     public double toCelsius(String convertFrom, double degree){
-
-        Precision.round(degree,roundScale);
 
         try {
             if(convertFrom.equals(Units.FAHRENHEIT.toString())){
@@ -52,7 +26,7 @@ public class TemperatureConversionModel {
                 K = degree;
                 C = (K - 273.15);
             }
-            if(convertFrom.equals(Units.RANKINE.toString())){
+            else if(convertFrom.equals(Units.RANKINE.toString())){
                 R = degree;
                 C = (R - 491.67) * 5/9;
             }
@@ -63,9 +37,29 @@ public class TemperatureConversionModel {
         return Precision.round(C,roundScale);
     }
 
-    public double toFahrenheit(String convertFrom, double degree){
+    public double toKelvin(String convertFrom, double degree){
 
-        Precision.round(degree,roundScale);
+        try {
+            if(convertFrom.equals(Units.CELSIUS.toString())) {
+                C = degree;
+                K = C + 273.15;
+            }
+            else if(convertFrom.equals(Units.FAHRENHEIT.toString())){
+                F = degree;
+                K = (F - 32) * 5/9 + 273.15;
+            }
+            else if(convertFrom.equals(Units.RANKINE.toString())){
+                R = degree;
+                K = R * 5/9;
+            }
+        }
+        catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
+        return Precision.round(K,roundScale);
+    }
+
+    public double toFahrenheit(String convertFrom, double degree){
 
         try {
             if(convertFrom.equals(Units.CELSIUS.toString())) {
@@ -76,7 +70,7 @@ public class TemperatureConversionModel {
                 K = degree;
                 F = (K - 273.15) * 9/5 + 32;
             }
-            if(convertFrom.equals(Units.RANKINE.toString())){
+            else if(convertFrom.equals(Units.RANKINE.toString())){
                 R = degree;
                 F = R - 459.67;
             }
@@ -88,8 +82,6 @@ public class TemperatureConversionModel {
     }
 
     public double toRankine(String convertFrom, double degree){
-
-        Precision.round(degree,roundScale);
 
         try {
             if(convertFrom.equals(Units.CELSIUS.toString())) {
