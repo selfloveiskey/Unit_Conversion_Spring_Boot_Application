@@ -24,10 +24,10 @@ public class TemperatureServiceImpl implements TemperatureService {
             temptResponseModel.setConvertedDegree(temptConversionModel.toKelvin(temptRequestModel.getTemptFrom(), temptRequestModel.getTemptValue()));
             temptResponseModel.setStudentResponse(Precision.round(temptRequestModel.getStudentResponse(),roundScale));
 
-            if(temptResponseModel.getConvertedDegree() == temptRequestModel.getStudentResponse()){
-                temptResponseModel.setResponseValidator("correct");
+            if(temptResponseModel.getConvertedDegree() == temptResponseModel.getStudentResponse()){
+                temptResponseModel.setResponseValidator("Student answer is correct");
             }else{
-                temptResponseModel.setResponseValidator("incorrect");
+                temptResponseModel.setResponseValidator("Student answer is incorrect");
             }
         }
         catch (Exception e) {
@@ -43,10 +43,10 @@ public class TemperatureServiceImpl implements TemperatureService {
             temptResponseModel.setConvertedDegree(temptConversionModel.toCelsius(temptRequestModel.getTemptFrom(), temptRequestModel.getTemptValue()));
             temptResponseModel.setStudentResponse(Precision.round(temptRequestModel.getStudentResponse(),roundScale));
 
-            if(temptResponseModel.getConvertedDegree() == temptRequestModel.getStudentResponse()){
-                temptResponseModel.setResponseValidator("correct");
+            if(temptResponseModel.getConvertedDegree() == temptResponseModel.getStudentResponse()){
+                temptResponseModel.setResponseValidator("Student answer is correct");
             }else{
-                temptResponseModel.setResponseValidator("incorrect");
+                temptResponseModel.setResponseValidator("Student answer is incorrect");
             }
         }
         catch (Exception e) {
@@ -62,10 +62,10 @@ public class TemperatureServiceImpl implements TemperatureService {
             temptResponseModel.setConvertedDegree(temptConversionModel.toFahrenheit(temptRequestModel.getTemptFrom(), temptRequestModel.getTemptValue()));
             temptResponseModel.setStudentResponse(Precision.round(temptRequestModel.getStudentResponse(),roundScale));
 
-            if(temptResponseModel.getConvertedDegree() == temptRequestModel.getStudentResponse()){
-                temptResponseModel.setResponseValidator("correct");
+            if(temptResponseModel.getConvertedDegree() == temptResponseModel.getStudentResponse()){
+                temptResponseModel.setResponseValidator("Student answer is correct");
             }else{
-                temptResponseModel.setResponseValidator("incorrect");
+                temptResponseModel.setResponseValidator("Student answer is incorrect");
             }
         }
         catch (Exception e) {
@@ -81,10 +81,10 @@ public class TemperatureServiceImpl implements TemperatureService {
             temptResponseModel.setConvertedDegree(temptConversionModel.toRankine(temptRequestModel.getTemptFrom(), temptRequestModel.getTemptValue()));
             temptResponseModel.setStudentResponse(Precision.round(temptRequestModel.getStudentResponse(),roundScale));
 
-            if(temptResponseModel.getConvertedDegree() == temptRequestModel.getStudentResponse()){
-                temptResponseModel.setResponseValidator("correct");
+            if(temptResponseModel.getConvertedDegree() == temptResponseModel.getStudentResponse()){
+                temptResponseModel.setResponseValidator("Student answer is correct");
             }else{
-                temptResponseModel.setResponseValidator("incorrect");
+                temptResponseModel.setResponseValidator("Student answer is incorrect");
             }
         }
         catch (Exception e) {
