@@ -2,6 +2,7 @@ package com.flexion.codingchallenge.service.serviceimpl;
 
 import com.flexion.codingchallenge.model.request.TemperatureRequestModel;
 import com.flexion.codingchallenge.model.response.TemperatureResponseModel;
+import com.flexion.codingchallenge.unitsofmeasure.UnitsOfMeasure;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,106 +17,106 @@ class TemperatureServiceImplTest {
     @Test
     void testConvertToCelsiusResponseValidatorResultEqualsCorrect() {
 
-        temperatureRequestModel.setTemptFrom("Rankine");
-        temperatureRequestModel.setTemptTo("Celsius");
-        temperatureRequestModel.setTemptValue(-77);
+        temperatureRequestModel.setTempFrom(UnitsOfMeasure.Units.RANKINE.label);
+        temperatureRequestModel.setTempTo(UnitsOfMeasure.Units.CELSIUS.label);
+        temperatureRequestModel.setTempValue(-77);
         temperatureRequestModel.setStudentResponse(-315.9);
 
         temperatureResponseModel = temperatureServiceImpl.convertToCelsius(temperatureRequestModel);
 
-        assertEquals(temperatureResponseModel.getResponseValidator(), "correct");
+        assertEquals(temperatureResponseModel.getResponseValidator(), "Student answer is correct");
 
     }
 
     @Test
     void testConvertToCelsiusResponseValidatorResultEqualsIncorrect() {
 
-        temperatureRequestModel.setTemptFrom("Fahrenheit");
-        temperatureRequestModel.setTemptTo("Celsius");
-        temperatureRequestModel.setTemptValue(64);
+        temperatureRequestModel.setTempFrom(UnitsOfMeasure.Units.FAHRENHEIT.label);
+        temperatureRequestModel.setTempTo(UnitsOfMeasure.Units.CELSIUS.label);
+        temperatureRequestModel.setTempValue(64);
         temperatureRequestModel.setStudentResponse(17);
 
         temperatureResponseModel = temperatureServiceImpl.convertToCelsius(temperatureRequestModel);
 
-        assertEquals(temperatureResponseModel.getResponseValidator(), "incorrect");
+        assertEquals(temperatureResponseModel.getResponseValidator(), "Student answer is incorrect");
 
     }
 
     @Test
     void testConvertToKelvinResponseValidatorResultEqualsCorrect() {
 
-       temperatureRequestModel.setTemptFrom("Celsius");
-       temperatureRequestModel.setTemptTo("Kelvin");
-       temperatureRequestModel.setTemptValue(64);
+       temperatureRequestModel.setTempFrom(UnitsOfMeasure.Units.CELSIUS.label);
+       temperatureRequestModel.setTempTo(UnitsOfMeasure.Units.KELVIN.label);
+       temperatureRequestModel.setTempValue(64);
        temperatureRequestModel.setStudentResponse(337.2);
 
        temperatureResponseModel = temperatureServiceImpl.convertToKelvin(temperatureRequestModel);
 
-        assertEquals(temperatureResponseModel.getResponseValidator(), "correct");
+        assertEquals(temperatureResponseModel.getResponseValidator(), "Student answer is correct");
 
     }
 
     @Test
     void testConvertToKelvinResponseValidatorResultEqualsIncorrect() {
 
-        temperatureRequestModel.setTemptFrom("Celsius");
-        temperatureRequestModel.setTemptTo("Kelvin");
-        temperatureRequestModel.setTemptValue(64);
+        temperatureRequestModel.setTempFrom(UnitsOfMeasure.Units.CELSIUS.label);
+        temperatureRequestModel.setTempTo(UnitsOfMeasure.Units.KELVIN.label);
+        temperatureRequestModel.setTempValue(64);
         temperatureRequestModel.setStudentResponse(77);
 
         temperatureResponseModel = temperatureServiceImpl.convertToKelvin(temperatureRequestModel);
 
-        assertEquals(temperatureResponseModel.getResponseValidator(), "incorrect");
+        assertEquals(temperatureResponseModel.getResponseValidator(), "Student answer is incorrect");
 
     }
 
     @Test
     void testConvertToFahrenheitResponseValidatorResultEqualsCorrect() {
 
-        temperatureRequestModel.setTemptFrom("Kelvin");
-        temperatureRequestModel.setTemptTo("Fahrenheit");
-        temperatureRequestModel.setTemptValue(-77);
+        temperatureRequestModel.setTempFrom(UnitsOfMeasure.Units.KELVIN.label);
+        temperatureRequestModel.setTempTo(UnitsOfMeasure.Units.FAHRENHEIT.label);
+        temperatureRequestModel.setTempValue(-77);
         temperatureRequestModel.setStudentResponse(-598.3);
 
         temperatureResponseModel = temperatureServiceImpl.convertToFahrenheit(temperatureRequestModel);
 
-        assertEquals(temperatureResponseModel.getResponseValidator(), "correct");
+        assertEquals(temperatureResponseModel.getResponseValidator(), "Student answer is correct");
     }
 
     @Test
     void testConvertToFahrenheitResponseValidatorResultEqualsIncorrect() {
 
-        temperatureRequestModel.setTemptFrom("Celsius");
-        temperatureRequestModel.setTemptTo("Fahrenheit");
-        temperatureRequestModel.setTemptValue(64);
+        temperatureRequestModel.setTempFrom(UnitsOfMeasure.Units.CELSIUS.label);
+        temperatureRequestModel.setTempTo(UnitsOfMeasure.Units.FAHRENHEIT.label);
+        temperatureRequestModel.setTempValue(64);
         temperatureRequestModel.setStudentResponse(337.2);
 
         temperatureResponseModel = temperatureServiceImpl.convertToFahrenheit(temperatureRequestModel);
 
-        assertEquals(temperatureResponseModel.getResponseValidator(), "incorrect");
+        assertEquals(temperatureResponseModel.getResponseValidator(), "Student answer is incorrect");
     }
 
     @Test
     void testConvertToRankineResponseValidatorResultEqualsCorrect() {
-        temperatureRequestModel.setTemptFrom("Kelvin");
-        temperatureRequestModel.setTemptTo("Rankine");
-        temperatureRequestModel.setTemptValue(64);
+        temperatureRequestModel.setTempFrom(UnitsOfMeasure.Units.KELVIN.label);
+        temperatureRequestModel.setTempTo(UnitsOfMeasure.Units.RANKINE.label);
+        temperatureRequestModel.setTempValue(64);
         temperatureRequestModel.setStudentResponse(115.2);
 
         temperatureResponseModel = temperatureServiceImpl.convertToRankine(temperatureRequestModel);
 
-        assertEquals(temperatureResponseModel.getResponseValidator(), "correct");
+        assertEquals(temperatureResponseModel.getResponseValidator(), "Student answer is correct");
     }
 
     @Test
     void testConvertToRankineResponseValidatorResultEqualsIncorrect() {
-        temperatureRequestModel.setTemptFrom("Fahrenheit");
-        temperatureRequestModel.setTemptTo("Rankine");
-        temperatureRequestModel.setTemptValue(-77);
+        temperatureRequestModel.setTempFrom(UnitsOfMeasure.Units.FAHRENHEIT.label);
+        temperatureRequestModel.setTempTo(UnitsOfMeasure.Units.FAHRENHEIT.label);
+        temperatureRequestModel.setTempValue(-77);
         temperatureRequestModel.setStudentResponse(77);
 
         temperatureResponseModel = temperatureServiceImpl.convertToRankine(temperatureRequestModel);
 
-        assertEquals(temperatureResponseModel.getResponseValidator(), "incorrect");
+        assertEquals(temperatureResponseModel.getResponseValidator(), "Student answer is incorrect");
     }
 }
