@@ -6,8 +6,8 @@ package com.flexion.codingchallenge.model.response;
 */
 public class TemperatureResponseModel {
 
-    private String temptFrom;
-    private String temptTo;
+    private String tempFrom;
+    private String tempTo;
     private double convertedDegree;
     private double initialDegree;
     private double studentResponse;
@@ -31,20 +31,20 @@ public class TemperatureResponseModel {
         this.convertedDegree = convertedDegree;
     }
 
-    public String getTemptFrom() {
-        return temptFrom;
+    public String getTempFrom() {
+        return tempFrom;
     }
 
-    public void setTemptFrom(String temptFrom) {
-        this.temptFrom = temptFrom;
+    public void setTempFrom(String tempFrom) {
+        this.tempFrom = tempFrom;
     }
 
-    public String getTemptTo() {
-        return temptTo;
+    public String getTempTo() {
+        return tempTo;
     }
 
-    public void setTemptTo(String temptTo) {
-        this.temptTo = temptTo;
+    public void setTempTo(String tempTo) {
+        this.tempTo = tempTo;
     }
 
     public double getStudentResponse() {
