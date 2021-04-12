@@ -1,12 +1,12 @@
-#Flexion Coding Challenge
+## Flexion Coding Challenge
 ***
-######Project description
+Project description
 ***
 Our users are science teachers who are as comfortable using the command line as they are using a browser. In their “Unit Conversion” science unit, they want to assign students unit-conversion problems on paper worksheets. After students turn in their completed worksheets, the teachers want to be able to enter the questions and student responses into a computer to be graded. Students will convert:
 * Temperatures: between Kelvin, Celsius, Fahrenheit, and Rankine
 * Volumes: between liters, tablespoons, cubic-inches, cups, cubic-feet, and gallons 
 ***
-######Requirements
+Requirements
 ***  
 The requirements below are not intended to suggest a particular user interface, just what data the user must provide as input and what data the system must provide as output.
 * The teacher must be able to provide an input numerical value, an input unit of measure, a target unit of measure, and a student’s numeric response.
