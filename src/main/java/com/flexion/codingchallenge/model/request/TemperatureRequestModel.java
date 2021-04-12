@@ -5,44 +5,44 @@ package com.flexion.codingchallenge.model.request;
 |----------------------
 */
 public class TemperatureRequestModel {
-   private String temptFrom;
-   private String temptTo;
-   private double temptValue;
+   private String tempFrom;
+   private String tempTo;
+   private double tempValue;
    private double studentResponse;
 
     public TemperatureRequestModel() {
 
     }
 
-    public TemperatureRequestModel(String temptFrom, String temptTo, double temptValue, double studentResponse) {
-        this.temptFrom = temptFrom;
-        this.temptTo = temptTo;
-        this.temptValue = temptValue;
+    public TemperatureRequestModel(String tempFrom, String tempTo, double tempValue, double studentResponse) {
+        this.tempFrom = tempFrom;
+        this.tempTo = tempTo;
+        this.tempValue = tempValue;
         this.studentResponse = studentResponse;
     }
 
-    public String getTemptFrom() {
-        return temptFrom;
+    public String getTempFrom() {
+        return tempFrom;
     }
 
-    public void setTemptFrom(String temptFrom) {
-        this.temptFrom = temptFrom;
+    public void setTempFrom(String tempFrom) {
+        this.tempFrom = tempFrom;
     }
 
-    public String getTemptTo() {
-        return temptTo;
+    public String getTempTo() {
+        return tempTo;
     }
 
-    public void setTemptTo(String temptTo) {
-        this.temptTo = temptTo;
+    public void setTempTo(String tempTo) {
+        this.tempTo = tempTo;
     }
 
-    public double getTemptValue() {
-        return temptValue;
+    public double getTempValue() {
+        return tempValue;
     }
 
-    public void setTemptValue(double temptValue) {
-        this.temptValue = temptValue;
+    public void setTempValue(double tempValue) {
+        this.tempValue = tempValue;
     }
 
     public double getStudentResponse() {
