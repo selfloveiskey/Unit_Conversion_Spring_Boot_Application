@@ -1,8 +1,11 @@
 package com.flexion.codingchallenge.controller;
 
 import com.flexion.codingchallenge.model.request.TemperatureRequestModel;
+import com.flexion.codingchallenge.model.request.VolumeRequestModel;
 import com.flexion.codingchallenge.model.response.TemperatureResponseModel;
+import com.flexion.codingchallenge.model.response.VolumeResponseModel;
 import com.flexion.codingchallenge.service.TemperatureService;
+import com.flexion.codingchallenge.service.VolumeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -14,6 +17,9 @@ public class UnitConversionController {
 
     @Autowired
     TemperatureService temperatureService;
+
+    @Autowired
+    VolumeService volumeService;
 
     @Value("${spring.application.name}")
     String appName;
@@ -30,47 +36,95 @@ public class UnitConversionController {
         return "temperature";
     }
 
-    @PostMapping("/volume")
-    public String volumeHtmlPage() {
-
-        return "volume";
-    }
-
     @PostMapping("/temperatureConversion")
-    public String Temperature(@ModelAttribute TemperatureRequestModel temptRequestModel, Model model) {
+    public String Temperature(@ModelAttribute TemperatureRequestModel tempRequestModel, Model model) {
 
         try {
-            TemperatureResponseModel temptResponseModel = null;
+            TemperatureResponseModel tempResponseModel = new TemperatureResponseModel();
 
-            switch (temptRequestModel.getTemptTo()) {
+            switch (tempRequestModel.getTempTo()) {
                 case "Celsius":
-                    temptResponseModel = temperatureService.convertToCelsius(temptRequestModel);
+                    tempResponseModel = temperatureService.convertToCelsius(tempRequestModel);
 
                     break;
                 case "Fahrenheit":
-                    temptResponseModel = temperatureService.convertToFahrenheit(temptRequestModel);
+                    tempResponseModel = temperatureService.convertToFahrenheit(tempRequestModel);
 
                     break;
                 case "Kelvin":
-                    temptResponseModel = temperatureService.convertToKelvin(temptRequestModel);
+                    tempResponseModel = temperatureService.convertToKelvin(tempRequestModel);
 
                     break;
                 case "Rankine":
-                    temptResponseModel = temperatureService.convertToRankine(temptRequestModel);
+                    tempResponseModel = temperatureService.convertToRankine(tempRequestModel);
 
                     break;
             }
 
-            temptResponseModel.setTemptFrom(temptRequestModel.getTemptFrom());
-            temptResponseModel.setTemptTo(temptRequestModel.getTemptTo());
-            temptResponseModel.setInitialDegree(temptRequestModel.getTemptValue());
+            tempResponseModel.setTempFrom(tempRequestModel.getTempFrom());
+            tempResponseModel.setTempTo(tempRequestModel.getTempTo());
+            tempResponseModel.setInitialDegree(tempRequestModel.getTempValue());
 
-            model.addAttribute("TemperatureResponseModel", temptResponseModel);
+            model.addAttribute("TemperatureResponseModel", tempResponseModel);
         }
         catch (Exception exception){
             exception.printStackTrace();
         }
 
         return "TemperatureResults";
+    }
+
+
+    @PostMapping("/volume")
+    public String volumeHtmlPage(Model model) {
+        model.addAttribute("VolumeRequestModel", new VolumeRequestModel());
+        return "volume";
+    }
+
+    @PostMapping("/volumeConversion")
+    public String Volume(@ModelAttribute VolumeRequestModel volumeRequestModel, Model model) {
+
+        try {
+            VolumeResponseModel volumeResponseModel = new VolumeResponseModel();
+
+            switch (volumeRequestModel.getVolumeTo()) {
+
+                case "Cubic-Feet":
+                    volumeResponseModel = volumeService.convertToCubicFeet(volumeRequestModel);
+
+                    break;
+                case "Cubic-Inches":
+                    volumeResponseModel = volumeService.convertToCubicInches(volumeRequestModel);
+
+                    break;
+                case "Cups":
+                    volumeResponseModel = volumeService.convertToCups(volumeRequestModel);
+
+                    break;
+                case "Gallons":
+                    volumeResponseModel = volumeService.convertToGallons(volumeRequestModel);
+
+                    break;
+                case "Liters":
+                    volumeResponseModel = volumeService.convertToLiters(volumeRequestModel);
+
+                    break;
+                case "Tablespoons":
+                    volumeResponseModel = volumeService.convertToTablespoons(volumeRequestModel);
+
+                    break;
+            }
+
+            volumeResponseModel.setVolumeFrom(volumeRequestModel.getVolumeFrom());
+            volumeResponseModel.setVolumeTo(volumeRequestModel.getVolumeTo());
+            volumeResponseModel.setInitialVolumeValue(volumeRequestModel.getVolumeValue());
+
+            model.addAttribute("VolumeResponseModel", volumeResponseModel);
+        }
+        catch (Exception exception){
+            exception.printStackTrace();
+        }
+
+        return "VolumeResults";
     }
 }
