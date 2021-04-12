@@ -8,7 +8,6 @@ body {
     font-size: 15px;
     line-height: 1.5;
     min-height: 100%;
-    background-color: green;
 }
 
 html {
@@ -16,27 +15,22 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
-/* Div that holds form */
-.w3-center {
+/* mainDiv */
+#mainDiv {
     display: block;
     padding: 4%;
     border: solid;
     margin: 4%;
     text-align: center!important;
-    background-color: gray;
 }
-/* || Header and Main Navigation */
-/* Inside div
-   Page header (h1)
-  */
+/* Inside main div
+    form */
 form{
-    padding: 2%;
-    margin: 2%;
+    padding: 1%;
 }
 
-/* Inside div
-   Page header (h1)
-  */
+/* Inside main div
+   header */
 h1 {
     color: #555555;
     padding: 2%;
@@ -48,10 +42,10 @@ h1 {
     display: block;
 }
 
-/* Inside div
+/* Inside main div
    Paragraph
   */
-p {
+#unitTypeParagraph {
     font-size: 20px!important;
     padding: 2%;
     margin: 2%;
@@ -63,9 +57,8 @@ p {
 body {
     font-family: Verdana,sans-serif;
     font-size: 15px;
-    line-height: 1.5;
-    min-height: 100%;
-    background-color: green;
+    /*line-height: 1.5;*/
+    /*min-height: 100%;*/
 }
 
 html {
@@ -81,7 +74,7 @@ html {
     border: solid;
     margin: 4%;
     text-align: center!important;
-    background-color: gray;
+    background-color: #000000;
 }
 
 /* Inside main div
@@ -99,18 +92,20 @@ h1 {
 
 }
 
-/*
-   Form
- */
-form {
-
-}
-
-/*
-   paragraph
+/* Inside form
+   Paragraph
   */
-#rowOneDiv {
-
+#convertFromInput, #studentResponseInput{
+    width: 40px;
+}
+#toParagraph, #emptyParagraph {
+    font-size: 20px!important;
+    box-sizing: border-box;
+    flex-basis: auto;
+    display: block;
+}
+#rowTwo_colThreeDiv{
+    display: block;
 }
 
 /* ************
