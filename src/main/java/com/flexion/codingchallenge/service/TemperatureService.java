@@ -10,8 +10,8 @@ import com.flexion.codingchallenge.model.response.TemperatureResponseModel;
 */
 public interface TemperatureService {
 
-    public TemperatureResponseModel convertToKelvin(TemperatureRequestModel temptRequestModel);
-    public TemperatureResponseModel convertToCelsius(TemperatureRequestModel temptRequestModel);
-    public TemperatureResponseModel convertToFahrenheit(TemperatureRequestModel temptRequestModel);
-    public TemperatureResponseModel convertToRankine(TemperatureRequestModel temptRequestModel);
+    public TemperatureResponseModel convertToKelvin(TemperatureRequestModel tempRequestModel);
+    public TemperatureResponseModel convertToCelsius(TemperatureRequestModel tempRequestModel);
+    public TemperatureResponseModel convertToFahrenheit(TemperatureRequestModel tempRequestModel);
+    public TemperatureResponseModel convertToRankine(TemperatureRequestModel tempRequestModel);
 }

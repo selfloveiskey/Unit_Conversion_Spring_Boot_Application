@@ -14,83 +14,83 @@ import org.springframework.stereotype.Service;
 @Service
 public class TemperatureServiceImpl implements TemperatureService {
 
-    TemperatureConversionModel temptConversionModel = new TemperatureConversionModel();
-    TemperatureResponseModel temptResponseModel = new TemperatureResponseModel();
+    TemperatureConversionModel tempConversionModel = new TemperatureConversionModel();
+    TemperatureResponseModel tempResponseModel = new TemperatureResponseModel();
     int roundScale = 1;
 
     @Override
-    public TemperatureResponseModel convertToKelvin(TemperatureRequestModel temptRequestModel) {
+    public TemperatureResponseModel convertToKelvin(TemperatureRequestModel tempRequestModel) {
         try {
-            temptResponseModel.setConvertedDegree(temptConversionModel.toKelvin(temptRequestModel.getTemptFrom(), temptRequestModel.getTemptValue()));
-            temptResponseModel.setStudentResponse(Precision.round(temptRequestModel.getStudentResponse(),roundScale));
+            tempResponseModel.setConvertedDegree(tempConversionModel.toKelvin(tempRequestModel.getTempFrom(), tempRequestModel.getTempValue()));
+            tempResponseModel.setStudentResponse(Precision.round(tempRequestModel.getStudentResponse(),roundScale));
 
-            if(temptResponseModel.getConvertedDegree() == temptResponseModel.getStudentResponse()){
-                temptResponseModel.setResponseValidator("Student answer is correct");
+            if(tempResponseModel.getConvertedDegree() == tempResponseModel.getStudentResponse()){
+                tempResponseModel.setResponseValidator("Student answer is correct");
             }else{
-                temptResponseModel.setResponseValidator("Student answer is incorrect");
+                tempResponseModel.setResponseValidator("Student answer is incorrect");
             }
         }
         catch (Exception e) {
             e.printStackTrace();
         }
 
-        return temptResponseModel;
+        return tempResponseModel;
     }
 
     @Override
-    public TemperatureResponseModel convertToCelsius(TemperatureRequestModel temptRequestModel) {
+    public TemperatureResponseModel convertToCelsius(TemperatureRequestModel tempRequestModel) {
         try {
-            temptResponseModel.setConvertedDegree(temptConversionModel.toCelsius(temptRequestModel.getTemptFrom(), temptRequestModel.getTemptValue()));
-            temptResponseModel.setStudentResponse(Precision.round(temptRequestModel.getStudentResponse(),roundScale));
+            tempResponseModel.setConvertedDegree(tempConversionModel.toCelsius(tempRequestModel.getTempFrom(), tempRequestModel.getTempValue()));
+            tempResponseModel.setStudentResponse(Precision.round(tempRequestModel.getStudentResponse(),roundScale));
 
-            if(temptResponseModel.getConvertedDegree() == temptResponseModel.getStudentResponse()){
-                temptResponseModel.setResponseValidator("Student answer is correct");
+            if(tempResponseModel.getConvertedDegree() == tempResponseModel.getStudentResponse()){
+                tempResponseModel.setResponseValidator("Student answer is correct");
             }else{
-                temptResponseModel.setResponseValidator("Student answer is incorrect");
+                tempResponseModel.setResponseValidator("Student answer is incorrect");
             }
         }
         catch (Exception e) {
             e.printStackTrace();
         }
 
-        return temptResponseModel;
+        return tempResponseModel;
     }
 
     @Override
-    public TemperatureResponseModel convertToFahrenheit(TemperatureRequestModel temptRequestModel) {
+    public TemperatureResponseModel convertToFahrenheit(TemperatureRequestModel tempRequestModel) {
         try {
-            temptResponseModel.setConvertedDegree(temptConversionModel.toFahrenheit(temptRequestModel.getTemptFrom(), temptRequestModel.getTemptValue()));
-            temptResponseModel.setStudentResponse(Precision.round(temptRequestModel.getStudentResponse(),roundScale));
+            tempResponseModel.setConvertedDegree(tempConversionModel.toFahrenheit(tempRequestModel.getTempFrom(), tempRequestModel.getTempValue()));
+            tempResponseModel.setStudentResponse(Precision.round(tempRequestModel.getStudentResponse(),roundScale));
 
-            if(temptResponseModel.getConvertedDegree() == temptResponseModel.getStudentResponse()){
-                temptResponseModel.setResponseValidator("Student answer is correct");
+            if(tempResponseModel.getConvertedDegree() == tempResponseModel.getStudentResponse()){
+                tempResponseModel.setResponseValidator("Student answer is correct");
             }else{
-                temptResponseModel.setResponseValidator("Student answer is incorrect");
+                tempResponseModel.setResponseValidator("Student answer is incorrect");
             }
         }
         catch (Exception e) {
             e.printStackTrace();
         }
 
-        return temptResponseModel;
+        return tempResponseModel;
     }
 
     @Override
-    public TemperatureResponseModel convertToRankine(TemperatureRequestModel temptRequestModel) {
+    public TemperatureResponseModel convertToRankine(TemperatureRequestModel tempRequestModel) {
         try {
-            temptResponseModel.setConvertedDegree(temptConversionModel.toRankine(temptRequestModel.getTemptFrom(), temptRequestModel.getTemptValue()));
-            temptResponseModel.setStudentResponse(Precision.round(temptRequestModel.getStudentResponse(),roundScale));
+            tempResponseModel.setConvertedDegree(tempConversionModel.toRankine(tempRequestModel.getTempFrom(), tempRequestModel.getTempValue()));
+            tempResponseModel.setStudentResponse(Precision.round(tempRequestModel.getStudentResponse(),roundScale));
 
-            if(temptResponseModel.getConvertedDegree() == temptResponseModel.getStudentResponse()){
-                temptResponseModel.setResponseValidator("Student answer is correct");
+            if(tempResponseModel.getConvertedDegree() == tempResponseModel.getStudentResponse()){
+                tempResponseModel.setResponseValidator("Student answer is correct");
             }else{
-                temptResponseModel.setResponseValidator("Student answer is incorrect");
+                tempResponseModel.setResponseValidator("Student answer is incorrect");
             }
         }
         catch (Exception e) {
             e.printStackTrace();
         }
 
-        return temptResponseModel;
+        return tempResponseModel;
     }
 }
