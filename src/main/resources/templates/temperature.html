@@ -17,19 +17,19 @@
 <div id="mainDiv" class="container-md">
     <h1>Temperature Conversion</h1>
     <hr />
-    <form method="POST" th:action="@{/temperatureConversion}" th:object="${TemperatureRequestModel}" onsubmit="return validateForm()" enctype="multipart/form-data" name="tempt_conversion_form" class="w-100 p-3">
+    <form method="POST" th:action="@{/temperatureConversion}" th:object="${TemperatureRequestModel}" onsubmit="return validateForm()" enctype="multipart/form-data" name="temp_conversion_form" class="w-100 p-3">
         <!--Row One-->
         <div id="rowOneDiv" class="row row-cols-sm-3">
             <div id="rowOne_colOneDiv" class="col-5">
                 <div class="input-group">
-                    <select id="convertFrom" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" th:field="*{temptFrom}" required>
+                    <select id="convertFrom" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" th:field="*{tempFrom}" required>
                         <option class="dropdown-item" value="none" hidden selected>Select an Option</option>
                         <option class="dropdown-item" value="Celsius">Celsius</option>
                         <option class="dropdown-item" value="Fahrenheit">Fahrenheit</option>
                         <option class="dropdown-item" value="Kelvin">Kelvin</option>
                         <option class="dropdown-item" value="Rankine">Rankine</option>
                     </select>
-                    <input type="number" id="convertFromInput" class="form-control" th:field="*{temptValue}" step="0.0001" aria-label="Text input with dropdown button" required>
+                    <input type="number" id="convertFromInput" class="form-control" th:field="*{tempValue}" step="0.0001" aria-label="Text input with dropdown button" required>
                 </div>
             </div>
 
@@ -39,7 +39,7 @@
 
             <div id="rowOne_colThreeDiv" class="col-5">
                 <div class="input-group">
-                    <select id="convertTo"  class="btn btn-primary dropdown-toggle" data-toggle="dropdown" th:field="*{temptTo}" required>
+                    <select id="convertTo"  class="btn btn-primary dropdown-toggle" data-toggle="dropdown" th:field="*{tempTo}" required>
                         <option class="dropdown-item" value="none" hidden selected>Select an Option</option>
                         <option class="dropdown-item" value="Celsius">Celsius</option>
                         <option class="dropdown-item" value="Fahrenheit">Fahrenheit</option>
@@ -74,7 +74,7 @@
         <div id="rowFourDiv" class=" row-cols-1 mt-4">
             <div id="rowFour_colOneDiv" class="col">
                 <input type="button" value="Home" class="btn btn-primary" aria-expanded="back button" onclick="location.href='/'">
-                <input id="resetButton" class="btn btn-primary" type="reset" value="Reset" aria-expanded="reset button" onclick="this.customReset();">
+                <input id="resetButton" class="btn btn-primary" type="reset" value="Reset" aria-expanded="reset button" onclick="this.customTempReset();">
             </div>
         </div>
     </form>
