@@ -2093,7 +2093,7 @@
   }
 
   function contains(parent, child) {
-    var rootNode = child.getRootNode && child.getRootNode(); // First, attempt with faster native method
+    var rootNode = child.getRootNode && child.getRootNode(); // First, attemp with faster native method
 
     if (parent.contains(child)) {
       return true;
